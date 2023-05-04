@@ -43,6 +43,10 @@
             'from_var_1':
                 '(?ix)
 
+                # non-matching negative-lookbehind
+                # prevent matching the first matching group if preceded by "is distinct "
+                (?<!is\sdistinct\s)
+
                 # first matching group
                 # from or join followed by at least 1 whitespace character
                 (from|join)\s+
@@ -66,6 +70,10 @@
                 ',
             'from_var_2':
                 '(?ix)
+
+                # non-matching negative-lookbehind
+                # prevent matching the first matching group if preceded by "is distinct "
+                (?<!is\sdistinct\s)
 
                 # first matching group
                 # from or join followed by at least 1 whitespace character
@@ -107,6 +115,10 @@
             'from_table_1':
                 '(?ix)
 
+                # non-matching negative-lookbehind
+                # prevent matching the first matching group if preceded by "is distinct "
+                (?<!is\sdistinct\s)
+
                 # first matching group
                 # from or join followed by at least 1 whitespace character            
                 (from|join)\s+
@@ -142,6 +154,10 @@
                 ',
             'from_table_2':
                 '(?ix)
+
+                # non-matching negative-lookbehind
+                # prevent matching the first matching group if preceded by "is distinct "
+                (?<!is\sdistinct\s)
 
                 # first matching group
                 # from or join followed by at least 1 whitespace character 
@@ -193,6 +209,10 @@
                 ',
             'from_table_3':
                 '(?ix)
+
+                # non-matching negative-lookbehind
+                # prevent matching the first matching group if preceded by "is distinct "
+                (?<!is\sdistinct\s)
 
                 # first matching group
                 # from or join followed by at least 1 whitespace character             
