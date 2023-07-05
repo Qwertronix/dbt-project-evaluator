@@ -5,6 +5,9 @@ with model_relationships as (
         *
     from {{ ref('int_all_dag_relationships') }}
     where child_resource_type = 'model'
+    -- only filter out excluded children nodes
+        -- filtering parents could result in incorrectly flagging nodes that depend on excluded nodes
+    and not child_is_excluded
 ),
 
 final as (
@@ -17,4 +20,4 @@ final as (
 
 select * from final
 
-{{ filter_exceptions(this) }}
+{{ filter_exceptions(model.name) }}
